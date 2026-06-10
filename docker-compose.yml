@@ -1,0 +1,16 @@
+services:
+
+  offers:
+    image: 663566123253.dkr.ecr.ap-south-2.amazonaws.com/offers:${OFFERS_TAG}
+
+    container_name: offers
+
+    ports:
+      - "1001:1001"
+
+    networks:
+      - micro-net
+
+networks:
+  micro-net:
+    external: true
