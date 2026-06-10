@@ -66,13 +66,13 @@ jobs:
       - name: Build OFFERS Image
         run: |
           docker build \
-          -t 663566123253.dkr.ecr.ap-south-2.amazonaws.com/offers:v1 \
+          -t 663566123253.dkr.ecr.ap-south-2.amazonaws.com/offers:${{ github.run_number }} \
           .
 
       - name: Push OFFERS Image
         run: |
           docker push \
-          663566123253.dkr.ecr.ap-south-2.amazonaws.com/offers:v1
+          663566123253.dkr.ecr.ap-south-2.amazonaws.com/offers:${{ github.run_number }}
 
   deploy:
 
